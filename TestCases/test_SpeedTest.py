@@ -2,6 +2,7 @@ from appium import webdriver
 
 import unittest
 from Pages.SpeedTestHomePage import SpeedTestHomePage
+from Pages.ResultsPage import ResultsPage
 from Resources.DataConfig import DataConfig
 from TestCases.BaseTest import BaseTest
 from tauk.tauk_webdriver import Tauk
@@ -23,6 +24,8 @@ class SpeedTest_ClickGo(BaseTest):
     speed_test_page = SpeedTestHomePage(self.driver)
     self.logger.info("Clicking Go Button")
     speed_test_page.click_go_button()
+    results_page = ResultsPage(self.driver)
+    results_page.wait_for_result()
 
 
 if __name__ == '__main__':

@@ -10,3 +10,6 @@ class BasePage:
 
   def click_element(self, by_locator):
     WebDriverWait(self.driver, DataConfig.ELEMENT_WAIT_TIME).until(EC.visibility_of_element_located(by_locator)).click()
+
+  def wait_for_element(self, by_locator):
+    WebDriverWait(self.driver, DataConfig.LONG_WAIT_TIME).until(EC.visibility_of_element_located(by_locator))
