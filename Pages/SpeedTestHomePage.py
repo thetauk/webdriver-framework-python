@@ -11,3 +11,6 @@ class SpeedTestHomePage(BasePage):
   def click_go_button(self):
     return self.click_element(self.GO_BUTTON)
 
+  def verify_go_button(self):
+    return self.wait_for_element(self.GO_BUTTON)
+

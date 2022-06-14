@@ -19,15 +19,12 @@ class SpeedTest_ClickGo(BaseTest):
   def tearDown(self):
     super().tearDown()
 
-  def test_click_go_button(self):
-    print("*************************************************")
+  def test_verify_go_button(self):
+    print("*********Verify Go Button*******************************")
     print(self.driver)
     speed_test_page = SpeedTestHomePage(self.driver)
-    self.logger.info("Clicking Go Button")
-    speed_test_page.click_go_button()
-    results_page = ResultsPage(self.driver)
-    results_page.wait_for_result()
-
+    self.logger.info("Verifying Go Button")
+    speed_test_page.verify_go_button()
 
 # if __name__ == '__main__':
 #   Tauk(TaukConfig(api_token=DataConfig.TAUK_API_TOKEN,

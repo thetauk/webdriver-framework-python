@@ -4,7 +4,7 @@ import sys
 import requests
 import subprocess
 import time
-import urllib3
+from appium import webdriver
 
 from tauk.tauk_webdriver import Tauk
 from tauk.config import TaukConfig
@@ -38,7 +38,7 @@ class BaseTest(unittest.TestCase):
           self.logger.info("Appium not running. Starting appium...")
           proc = subprocess.Popen(['appium', '--allow-insecure=get_server_logs'])
           self.logger.info("Appium started" + str(proc.pid))
-          i = 10
+          i = 50
           while i > 0:
             try:
               requests.get('http://localhost:4723/wd/hub/status')
@@ -47,9 +47,11 @@ class BaseTest(unittest.TestCase):
               time.sleep(0.2)
               i=i-1
 
-
+    self.driver = webdriver.Remote(command_executor = DataConfig.APPIUM_HOST, desired_capabilities = DataConfig.caps)
+    Tauk.register_driver(self.driver, unittestcase=self)
 
   def tearDown(self):
+    self.driver.quit()
     if DataConfig.START_AND_STOP_APPIUM_STANDALONE:
       if self.appium_service.is_running:
         print("Stopping appium.")
