@@ -11,7 +11,7 @@ from tauk.tauk_webdriver import Tauk
 from tauk.config import TaukConfig
 
 
-class SpeedTest_ClickGo(BaseTest):
+class SpeedTest_VerifyGo(BaseTest):
   def setUp(self):
     super().setUp()
     self.logger.info("Testing speedtest")

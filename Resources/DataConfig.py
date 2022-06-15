@@ -8,7 +8,6 @@ class DataConfig:
   APPIUM_HOST = "http://127.0.0.1:4723/wd/hub"
   caps = {}
   caps['appium:deviceName'] = 'Android'
-  caps['appium:udid'] = 'LMQ6107PH68TUOZTSG'
   caps['appium:platformName'] = 'Android'
   caps['appium:appPackage'] = 'org.zwanoo.android.speedtest'
   caps['appium:appActivity'] = 'com.ookla.mobile4.screens.main.MainActivity'
