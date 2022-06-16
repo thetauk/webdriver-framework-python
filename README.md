@@ -47,3 +47,7 @@ Similarly create other pages and test
 
 
 Currently tested only on Android devices
+
+Currently assuming that Appium is always running on localhost 4723 (hard coded in DataConfig)
+
+Tauk project ID & token is also configured under DataConfig
