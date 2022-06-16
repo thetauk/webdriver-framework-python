@@ -13,8 +13,28 @@ if __name__ == '__main__':
   parser = OptionParser()
   parser.add_option('-d', '--device', dest="udid", help='Enter device ID to run the test', default=True)
   parser.add_option('-t', '--test', dest="test", help='Enter test to run the test or all to run all', default=True)
+  parser.add_option('-p', '--package', dest="package", help='App package', default=False)
+  parser.add_option('-a', '--activity', dest="activity", help='App activity', default=False)
+  parser.add_option('-b', '--bundleid', dest="bundleid", help='Bundle ID', default=False)
+  parser.add_option('-o', '--os', dest="os", help='OS Type', default=True)
+  parser.add_option('-n', '--noreset', dest="noreset", help='OS Type', default=False)
   (option, arg) = parser.parse_args()
+
+  #Setup desired capabilities from command line
+
   DataConfig.caps["appium:udid"] = option.udid
+  DataConfig.caps["appium:deviceName"] = option.os
+  DataConfig.caps["appium:platformName"] = option.os
+  if option.noreset == "True" or option.noreset == "true":
+    DataConfig.caps['appium:noReset'] = True
+  if option.os == "Android":
+    DataConfig.caps["appium:appPackage"] = option.package
+    DataConfig.caps["appium:appActivity"] = option.activity
+  else:
+    DataConfig.caps["appium:bundleId"] = option.bundleid
+
+  # caps['appium:appPackage'] = 'org.zwanoo.android.speedtest'
+  # caps['appium:appActivity'] = 'com.ookla.mobile4.screens.main.MainActivity'
 
   AppiumManager.check_start_appium()
 

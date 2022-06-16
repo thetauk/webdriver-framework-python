@@ -24,11 +24,11 @@ Device ID has to be passed via command line option --device (or -d)
 
 Entire test suites can be run using command line option --test all or (-t all):
 
-```python3 TestCases/runner.py --device <your_device_id> --test all```
+```python3 TestCases/runner.py --device <your_device_id> --test all --os Android --noreset True --package app.package --activity app.package.activity```
 
 To run individual tests:
 
-```python3 TestCases/runner.py --device <your_device_id> --test test_SpeedTest```
+```python3 TestCases/runner.py --device <your_device_id> --test test_SpeedTest --os Android --noreset True --package app.package --activity app.package.activity ```
 
 
 ## How to create tests and run:
@@ -43,12 +43,7 @@ Write your test case logic under "test_YourTest.py"
 
 Similarly create other pages and test
 
-To run the entire suites,
-
-```python3 TestCases/runner.py --device <your_device_id> --test test_SpeedTest```
-
 ## Improvements needed
 
-Desired capabilities have been hard coded for the app which is fixed as Ookla Speedtest
 
 Currently tested only on Android devices
