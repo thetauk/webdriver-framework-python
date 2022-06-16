@@ -18,7 +18,7 @@ if __name__ == '__main__':
   parser.add_option('-b', '--bundleid', dest="bundleid", help='Bundle ID', default=False)
   parser.add_option('-o', '--os', dest="os", help='OS Type', default=True)
   parser.add_option('-n', '--noreset', dest="noreset", help='OS Type', default=False)
-  parser.add_option('-c', '--cloud', dest="noreset", help='OS Type', default=False)
+  parser.add_option('-c', '--cloud', dest="cloud", help='OS Type', default=False)
   (option, arg) = parser.parse_args()
 
   #Setup desired capabilities from command line
@@ -35,7 +35,7 @@ if __name__ == '__main__':
   else:
     DataConfig.caps["appium:bundleId"] = option.bundleid
 
-  if hasattr(option, "cloud"):
+  if hasattr(option, "cloud") and option.cloud != False:
     DataConfig.APPIUM_HOST = option.cloud
   else:
     DataConfig.APPIUM_HOST = "http://127.0.0.1:4723/wd/hub"

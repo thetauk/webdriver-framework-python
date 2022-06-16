@@ -30,6 +30,8 @@ To run individual tests:
 
 ```python3 TestCases/runner.py --device <your_device_id> --test test_SpeedTest --os Android --noreset True --package app.package --activity app.package.activity ```
 
+## Options
+
 
 ## How to create tests and run:
 
