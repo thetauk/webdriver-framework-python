@@ -5,7 +5,7 @@ class DataConfig:
   START_AND_STOP_APPIUM_STANDALONE = False
   CHECK_START_APPIUM = True
   LOCALHOST = "http://127.0.0.1"
-  APPIUM_HOST = "http://127.0.0.1:4723/wd/hub"
+  APPIUM_HOST = ""
   caps = {}
   TAUK_PROJECT_ID = "veWbY3V9R"
   TAUK_API_TOKEN = "GkdEv-vulLl5iR628rJkRR5w"

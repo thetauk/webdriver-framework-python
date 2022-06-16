@@ -18,6 +18,7 @@ if __name__ == '__main__':
   parser.add_option('-b', '--bundleid', dest="bundleid", help='Bundle ID', default=False)
   parser.add_option('-o', '--os', dest="os", help='OS Type', default=True)
   parser.add_option('-n', '--noreset', dest="noreset", help='OS Type', default=False)
+  parser.add_option('-c', '--cloud', dest="noreset", help='OS Type', default=False)
   (option, arg) = parser.parse_args()
 
   #Setup desired capabilities from command line
@@ -27,11 +28,17 @@ if __name__ == '__main__':
   DataConfig.caps["appium:platformName"] = option.os
   if option.noreset == "True" or option.noreset == "true":
     DataConfig.caps['appium:noReset'] = True
+
   if option.os == "Android":
     DataConfig.caps["appium:appPackage"] = option.package
     DataConfig.caps["appium:appActivity"] = option.activity
   else:
     DataConfig.caps["appium:bundleId"] = option.bundleid
+
+  if hasattr(option, "cloud"):
+    DataConfig.APPIUM_HOST = option.cloud
+  else:
+    DataConfig.APPIUM_HOST = "http://127.0.0.1:4723/wd/hub"
 
   # caps['appium:appPackage'] = 'org.zwanoo.android.speedtest'
   # caps['appium:appActivity'] = 'com.ookla.mobile4.screens.main.MainActivity'
