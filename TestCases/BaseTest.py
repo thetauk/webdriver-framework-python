@@ -1,24 +1,14 @@
 import unittest
-import logging
-import sys
-import requests
-import subprocess
-import time
 from appium import webdriver
-
 from tauk.tauk_webdriver import Tauk
-from tauk.config import TaukConfig
-
 from appium.webdriver.appium_service import AppiumService
 
 from Resources.DataConfig import DataConfig
+from Resources.LogManager import LogManager
 
 class BaseTest(unittest.TestCase):
   appium_service = AppiumService()
-  logger = logging.getLogger()
-  logger.level = logging.DEBUG
-  stream_handler = logging.StreamHandler(sys.stdout)
-  logger.addHandler(stream_handler)
+  logger = LogManager.setupLogging()
 
   def setUp(self):
     if DataConfig.START_AND_STOP_APPIUM_STANDALONE:

@@ -4,7 +4,7 @@ import time
 
 from Resources.DataConfig import DataConfig
 
-class AppiumManager():
+class AppiumManager:
   @staticmethod
   def check_start_appium():
     if DataConfig.CHECK_START_APPIUM:
