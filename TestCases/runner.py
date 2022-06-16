@@ -35,8 +35,8 @@ if __name__ == '__main__':
 
   # caps['appium:appPackage'] = 'org.zwanoo.android.speedtest'
   # caps['appium:appActivity'] = 'com.ookla.mobile4.screens.main.MainActivity'
-
-  AppiumManager.check_start_appium()
+  if DataConfig.CHECK_START_APPIUM:
+    AppiumManager.check_start_appium()
 
   Tauk(TaukConfig(api_token=DataConfig.TAUK_API_TOKEN, project_id=DataConfig.TAUK_PROJECT_ID))
   loader = unittest.TestLoader()

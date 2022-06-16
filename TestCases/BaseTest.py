@@ -5,6 +5,7 @@ from appium.webdriver.appium_service import AppiumService
 
 from Resources.DataConfig import DataConfig
 from Resources.LogManager import LogManager
+from Resources.AppiumManager import AppiumManager
 
 class BaseTest(unittest.TestCase):
   appium_service = AppiumService()
@@ -12,12 +13,11 @@ class BaseTest(unittest.TestCase):
 
   def setUp(self):
     if DataConfig.START_AND_STOP_APPIUM_STANDALONE:
-      if self.appium_service.is_running == False:
-        print("Appium starting: ")
-        self.logger.info("Appium Starting...")
-        pipe = self.appium_service.start(args=["--allow-cors", "--allow-insecure=get_server_logs"])
+      check_pipe = AppiumManager.check_start_appium_service()
+      if check_pipe:
+        self.logger.info("Appium started using Appium Service")
     else:
-      self.logger.info("Appium should be running")
+      self.logger.info("Appium should be started already")
     self.logger.info(DataConfig.caps)
     self.driver = webdriver.Remote(command_executor = DataConfig.APPIUM_HOST, desired_capabilities = DataConfig.caps)
     Tauk.register_driver(self.driver, unittestcase=self)

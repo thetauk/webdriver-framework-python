@@ -1,10 +1,19 @@
 import requests
 import subprocess
 import time
+from appium.webdriver.appium_service import AppiumService
 
 from Resources.DataConfig import DataConfig
 
 class AppiumManager:
+
+  @staticmethod
+  def check_start_appium_service():
+    appium_service = AppiumService()
+    if appium_service.is_running == False:
+      pipe = appium_service.start(args=["--allow-cors", "--allow-insecure=get_server_logs"])
+    return pipe
+
   @staticmethod
   def check_start_appium():
     if DataConfig.CHECK_START_APPIUM:
