@@ -12,13 +12,13 @@ from Resources.AppiumManager import AppiumManager
 if __name__ == '__main__':
   parser = OptionParser()
   parser.add_option('-d', '--device', dest="udid", help='Enter device ID to run the test', default=True)
-  parser.add_option('-t', '--test', dest="test", help='Enter test to run the test or all to run all', default=True)
+  parser.add_option('-t', '--test', dest="test", help='Enter test to run the test or all to run all', default="all")
   parser.add_option('-p', '--package', dest="package", help='App package', default=False)
   parser.add_option('-a', '--activity', dest="activity", help='App activity', default=False)
   parser.add_option('-b', '--bundleid', dest="bundleid", help='Bundle ID', default=False)
-  parser.add_option('-o', '--os', dest="os", help='OS Type', default=True)
-  parser.add_option('-n', '--noreset', dest="noreset", help='OS Type', default=False)
-  parser.add_option('-c', '--cloud', dest="cloud", help='OS Type', default=False)
+  parser.add_option('-o', '--os', dest="os", help='OS Type', default="Android")
+  parser.add_option('-n', '--noreset', dest="noreset", help='No Reset capability', default=False)
+  parser.add_option('-c', '--cloud', dest="cloud", help='Cloud URL', default=False)
   (option, arg) = parser.parse_args()
 
   #Setup desired capabilities from command line
@@ -40,8 +40,6 @@ if __name__ == '__main__':
   else:
     DataConfig.APPIUM_HOST = "http://127.0.0.1:4723/wd/hub"
 
-  # caps['appium:appPackage'] = 'org.zwanoo.android.speedtest'
-  # caps['appium:appActivity'] = 'com.ookla.mobile4.screens.main.MainActivity'
   if DataConfig.CHECK_START_APPIUM:
     AppiumManager.check_start_appium()
 

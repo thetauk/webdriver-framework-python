@@ -32,6 +32,29 @@ To run individual tests:
 
 ## Options
 
+### Add device ID
+`'-d', '--device', dest="udid", help='Enter device ID to run the test', default=True`
+
+### Add test to run
+`'-t', '--test', dest="test", help='Enter test to run the test or all to run all', default="all"`
+
+### Add android package name
+`'-p', '--package', dest="package", help='App package', default=False`
+
+### Add android activity name
+`'-a', '--activity', dest="activity", help='App activity', default=False`
+
+### Add iOS bundle ID
+`'-b', '--bundleid', dest="bundleid", help='Bundle ID', default=False`
+
+### Add OS type - "Android" or "iOS"
+`'-o', '--os', dest="os", help='OS Type', default="Android"`
+
+### Add noReset - True/False
+`'-n', '--noreset', dest="noreset", help='No reset', default=False`
+
+### Add cloud URL, default is False
+`'-c', '--cloud', dest="cloud", help='Cloud URL', default=False`
 
 ## How to create tests and run:
 
