@@ -1,10 +1,30 @@
-//Install Python3.7+
-pip3 install requests
-pip3 install Appium-Python-Client
-pip3 install tauk
-//Setup PythonPath - export PYTHONPATH=$PYTHONPATH:/pathto/theproject/AppiumAutomation
-//Install Appium - npm install -g appium
-//Install Python3.7+
-//ANDROID_SDK_ROOT=$HOME/Android/Sdk
-//ANDROID_HOME=$HOME/Android/Sdk
-//JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+Appium-Python-Client==2.2.0
+async-generator==1.10
+attrs==21.4.0
+backports.zoneinfo==0.2.1
+certifi==2022.5.18.1
+cffi==1.15.0
+charset-normalizer==2.0.12
+cryptography==37.0.2
+filelock==3.7.1
+h11==0.13.0
+idna==3.3
+jsonpickle==2.2.0
+outcome==1.1.0
+pycparser==2.21
+pyOpenSSL==22.0.0
+PySocks==1.7.1
+python-json-logger==2.0.2
+pytz-deprecation-shim==0.1.0.post0
+requests==2.27.1
+selenium==4.2.0
+sniffio==1.2.0
+sortedcontainers==2.4.0
+tauk==2.1.1
+tqdm==4.64.0
+trio==0.21.0
+trio-websocket==0.9.2
+tzdata==2022.1
+tzlocal==4.2
+urllib3==1.26.9
+wsproto==1.1.0
