@@ -12,6 +12,5 @@ class DataConfig:
   caps['appium:appPackage'] = 'org.zwanoo.android.speedtest'
   caps['appium:appActivity'] = 'com.ookla.mobile4.screens.main.MainActivity'
   caps['appium:noReset'] = True
-  caps['appium:chromeOptions'] = {"loggingPrefs": {'performance': 'ALL'}}
   TAUK_PROJECT_ID = "veWbY3V9R"
   TAUK_API_TOKEN = "GkdEv-vulLl5iR628rJkRR5w"
