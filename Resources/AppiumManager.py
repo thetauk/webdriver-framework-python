@@ -17,7 +17,7 @@ class AppiumManager():
             check_appium.status_code))
       except:
         print("Appium not running. Starting appium...")
-        proc = subprocess.Popen(['appium', '--allow-insecure=get_server_logs'])
+        proc = subprocess.Popen(['appium', '--allow-insecure=get_server_logs', '--allow-cors'])
         print("Appium started" + str(proc.pid))
         i = 50
         while i > 0:
