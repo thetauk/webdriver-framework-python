@@ -1,0 +1,10 @@
+//Install Python3.7+
+pip3 install requests
+pip3 install Appium-Python-Client
+pip3 install tauk
+//Setup PythonPath - export PYTHONPATH=$PYTHONPATH:/pathto/theproject/AppiumAutomation
+//Install Appium - npm install -g appium
+//Install Python3.7+
+//ANDROID_SDK_ROOT=$HOME/Android/Sdk
+//ANDROID_HOME=$HOME/Android/Sdk
+//JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
