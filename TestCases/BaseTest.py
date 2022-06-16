@@ -1,14 +1,12 @@
 import unittest
 from appium import webdriver
 from tauk.tauk_webdriver import Tauk
-from appium.webdriver.appium_service import AppiumService
 
 from Resources.DataConfig import DataConfig
 from Resources.LogManager import LogManager
 from Resources.AppiumManager import AppiumManager
 
 class BaseTest(unittest.TestCase):
-  appium_service = AppiumService()
   logger = LogManager.setupLogging()
 
   def setUp(self):
