@@ -7,5 +7,8 @@ class DataConfig:
   LOCALHOST = "http://127.0.0.1"
   APPIUM_HOST = ""
   caps = {}
+  include = ''
+  exclude = ''
+  test = ''
   TAUK_PROJECT_ID = "veWbY3V9R"
   TAUK_API_TOKEN = "GkdEv-vulLl5iR628rJkRR5w"

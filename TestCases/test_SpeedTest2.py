@@ -2,6 +2,9 @@
 from Pages.SpeedTestHomePage import SpeedTestHomePage
 from TestCases.BaseTest import BaseTest
 
+from testlabel import testlabel
+
+@testlabel("group2", "speedtest")
 
 class SpeedTest_VerifyGo(BaseTest):
   def setUp(self):

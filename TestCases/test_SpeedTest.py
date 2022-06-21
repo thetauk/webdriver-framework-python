@@ -2,7 +2,9 @@ from Pages.SpeedTestHomePage import SpeedTestHomePage
 from Pages.ResultsPage import ResultsPage
 from TestCases.BaseTest import BaseTest
 
+from testlabel import testlabel
 
+@testlabel("group2", "speedtest")
 class SpeedTest_ClickGo(BaseTest):
   def setUp(self):
     super().setUp()

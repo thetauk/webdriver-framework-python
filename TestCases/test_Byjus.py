@@ -1,6 +1,8 @@
 from TestCases.BaseTest import BaseTest
 from Pages.ByjusHomePage import ByjusHomePage
+from testlabel import testlabel
 
+@testlabel("group1", "byjus")
 class ByjusApp(BaseTest):
   def setUp(self):
     super().setUp()
