@@ -36,12 +36,8 @@ class MyTestRunner(unittest.runner.TextTestRunner):
     for test in self.test_iter(testlist):
       test_method = getattr(test, test._testMethodName)
       testlabels = getattr(test, "_labels", set())
-      print("Parsing*******")
-      print(testlabels)
-      print(DataConfig.include)
-      print(DataConfig.exclude)
-      print(DataConfig.test)
-      if DataConfig.include == '' and DataConfig.exclude == '' and DataConfig.test == "all":
+
+      if DataConfig.include == '' and DataConfig.exclude == '' and DataConfig.test != '':
         suite.addTest(test)
       if DataConfig.include in testlabels:
         suite.addTest(test)
@@ -106,6 +102,7 @@ if __name__ == '__main__':
     DataConfig.test = option.test
     suite = loader.discover("./", pattern="test*.py")
   else:
+    DataConfig.test = option.test
     suite = loader.discover("./", pattern=str(option.test) + ".py")
   alltests = unittest.TestSuite((suite))
   testRunner = MyTestRunner(resultclass=TaukListener, verbosity=2).run(alltests)
