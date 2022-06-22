@@ -39,7 +39,7 @@ class MyTestRunner(unittest.runner.TextTestRunner):
 
       if DataConfig.include == '' and DataConfig.exclude == '' and DataConfig.test != '':
         suite.addTest(test)
-      if DataConfig.include in testlabels:
+      if DataConfig.include in testlabels and DataConfig.exclude not in testlabels:
         suite.addTest(test)
       if DataConfig.exclude in testlabels:
         @functools.wraps(test_method)
@@ -59,7 +59,7 @@ class MyTestRunner(unittest.runner.TextTestRunner):
 if __name__ == '__main__':
   parser = OptionParser()
   parser.add_option('-d', '--device', dest="udid", help='Enter device ID to run the test', default=True)
-  parser.add_option('-t', '--test', dest="test", help='Enter test to run the test or all to run all', default="all")
+  parser.add_option('-t', '--test', dest="test", help='Enter test to run the test or all to run all', default='all')
   parser.add_option('-p', '--package', dest="package", help='App package', default=False)
   parser.add_option('-a', '--activity', dest="activity", help='App activity', default=False)
   parser.add_option('-b', '--bundleid', dest="bundleid", help='Bundle ID', default=False)
